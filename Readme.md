@@ -24,3 +24,7 @@ pip install -r requirements.txt
 ## Data Source
 
 The application relies on pre-scraped data for NACE codes and their descriptions source: https://nacev2.com/en
+
+## Data Scraping
+
+The entirety of the descriptions were used generate the JSON file, hence there is room for pre-processing for a more efficient search.
