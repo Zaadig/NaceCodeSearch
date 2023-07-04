@@ -80,7 +80,7 @@ def search_nace(user_input, nace_keywords, nace_codes):
     else:
         best_matches = find_best_matches(user_input, nace_keywords.keys())
         matching_codes_with_titles = []
-        for match, score, _ in best_matches: # add another variable to unpack the third value
+        for match, score, _ in best_matches:
             if len(match) < 3:
                 continue
             for code in nace_keywords.get(match, []):
@@ -98,6 +98,8 @@ try:
 except FileNotFoundError:
     scrape_data(main_urls)
     nace_keywords, nace_codes = load_data()
+
+#possible addition of a function to fill csv files
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
