@@ -13,7 +13,8 @@ pip install -r requirements.txt
 
 1. Run the application:
 
-    python3 app.py
+    python3 app.py (for the standard verison)
+    python3 appV2.py (for the version with synonyms)
 
 2. Open your web browser and go to `http://localhost:5000`.
 
