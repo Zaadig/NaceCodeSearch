@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NACE Code Search</title>
+</head>
+<body>
+    <form method="POST">
+        <input type="text" name="search" placeholder="Enter a keyword, NACE code">
+        <input type="submit" value="Search">
+    </form>
+    {% if results %}
+        <h2>Primary Results:</h2>
+        {% for result in results.primary_results %}
+            <div>
+                <p>{{ result }}</p>
+            </div>
+        {% endfor %}
+        <h2>Additional Results:</h2>
+        {% for result in results.additional_results %}
+            <div>
+                <p>{{ result }}</p>
+            </div>
+        {% endfor %}
+        <h2>Synonyms Used:</h2>
+        <div>
+            <p>{{ results.synonyms }}</p>
+        </div>
+    {% endif %}
+</body>
+</html>

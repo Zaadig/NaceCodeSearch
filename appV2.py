@@ -145,11 +145,16 @@ except FileNotFoundError:
     
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    primary_results = additional_results = synonyms = None
+    results = None
     if request.method == 'POST':
         user_input = request.form.get('search')
         primary_results, additional_results, synonyms = search_nace_with_synonyms(user_input, nace_keywords, nace_codes)
-    return render_template('search.html', primary_results=primary_results, additional_results=additional_results, synonyms=synonyms)
+        results = {
+            'primary_results': primary_results,
+            'additional_results': additional_results,
+            'synonyms': synonyms
+        }
+    return render_template('search_with_synonyms.html', results=results)
 
 
 
